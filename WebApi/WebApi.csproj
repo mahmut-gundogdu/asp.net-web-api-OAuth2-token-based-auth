@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,16 +103,11 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\mgController.cs" />
+    <Compile Include="Controllers\YetkiliController.cs" />
+    <Compile Include="Controllers\YoneticiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\csAntreman.cs" />
-    <Compile Include="Models\csAntremanEgzersizleri.cs" />
-    <Compile Include="Models\csAntremanGunleri.cs" />
-    <Compile Include="Models\csEgzersiz.cs" />
-    <Compile Include="Models\csEgzersizKategori.cs" />
-    <Compile Include="Models\csOgrenci.cs" />
     <Compile Include="OAuth\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="OAuth\Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

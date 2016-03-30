@@ -7,13 +7,14 @@ using System.Web.Http;
 
 namespace WebApi.Controllers
 {
-    public class DefaultController : ApiController
+    public class YetkiliController : ApiController
     {
-        // GET: api/Default
+        // GET: api/mg
+        [Authorize]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Auth value1", "Auth value2" };
         }
-  
+ 
     }
 }

@@ -19,12 +19,21 @@ namespace AspNetWebAPIOAuth.OAuth.Providers
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             // Kullanıcının access_token alabilmesi için gerekli validation işlemlerini yapıyoruz.
-            if (context.UserName == "Gokhan" && context.Password == "123456")
+            if (context.UserName == "mg" && context.Password == "123456")
             {
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 
                 identity.AddClaim(new Claim("sub", context.UserName));
                 identity.AddClaim(new Claim("role", "user"));
+
+                context.Validated(identity);
+            }
+            else if (context.UserName == "yonetici" && context.Password == "123456")
+            {
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+
+                identity.AddClaim(new Claim("sub", context.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.Role , "yonetici"));// ClaimTypes.role girerek Authorize (Roles= "Admin" Diyebiliyoruz. Yayyy!!
 
                 context.Validated(identity);
             }
